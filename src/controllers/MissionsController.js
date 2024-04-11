@@ -43,9 +43,9 @@ try {
 
 async updateMission(request, response, next){
   try {
-    const locationId = request.params.locationId
+    const missionId = request.params.missionId
     const updateData = request.body
-    const updatedMission = await missionsService.updateMission(locationId, updateData)
+    const updatedMission = await missionsService.updateMission(missionId, updateData)
     response.send(updatedMission)
   } catch (error) {
     next(error)

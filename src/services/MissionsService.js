@@ -3,12 +3,13 @@ import { dbContext } from "../db/DbContext.js"
 
 class MissionsService {
 
-async updateMission(locationId, updateData){
-  const missionToUpdate = await dbContext.Missions.findById(locationId)
+async updateMission(missionId, updateData){
+  const missionToUpdate = await dbContext.Missions.findById(missionId)
 
-  if (!missionToUpdate) throw new Error (`Not location with id: ${locationId}`)
+  if (!missionToUpdate) throw new Error (`Not location with id: ${missionId}`)
 
-  missionToUpdate.completed = updateData.completed ??  missionToUpdate.completed
+  //missionToUpdate.completed = updateData.completed ??  missionToUpdate.completed
+  missionToUpdate.completed = true
 
   await missionToUpdate.save()
 

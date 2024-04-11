@@ -9,7 +9,7 @@ this.router
   .get('', this.getLocations)
 
   .get('/:locationId/missions', this.getLocationsMissions)
-  .put('/missions/:missionId', this.updateMission)
+  // .put('/missions/:missionId', this.updateMission)/
 }
 
 
