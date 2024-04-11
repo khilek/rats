@@ -9,7 +9,7 @@ this.router
   .get('', this.getLocations)
 
   .get('/:locationId/missions', this.getLocationsMissions)
-  .put('/missions', this.updateMission)
+  .put('/missions/:missionId', this.updateMission)
 }
 
 
@@ -47,8 +47,8 @@ async updateMission(request, response, next){
   try {
     const locationId = request.params.locationId
     const updateData = request.body
-    const updateMission = await missionsService.updateMission(locationId, updateData)
-    response.send(updateMission)
+    const updatedMission = await missionsService.updateMission(locationId, updateData)
+    response.send(updatedMission)
   } catch (error) {
     next(error)
   }

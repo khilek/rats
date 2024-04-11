@@ -8,7 +8,7 @@ async updateMission(locationId, updateData){
 
   if (!missionToUpdate) throw new Error (`Not location with id: ${locationId}`)
 
-  missionToUpdate.completed = updateData.completed  ?? missionToUpdate.completed
+  missionToUpdate.completed = updateData.completed ??  missionToUpdate.completed
 
   await missionToUpdate.save()
 

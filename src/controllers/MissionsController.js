@@ -11,7 +11,7 @@ this.router
 
 
 .post('', this.createMission)
-// .put('', this.updateMission)
+.put('/:missionId', this.updateMission)
 
 }
 
@@ -21,7 +21,7 @@ async getMissions(request, response, next) {
   try {
   const searchQuery = request.query
   const missions = await missionsService.getMissions()
-  response.send(missions)
+  response.send (missions)
   } catch (error){
     next(error)
   }
@@ -41,6 +41,16 @@ try {
 
 
 
+async updateMission(request, response, next){
+  try {
+    const locationId = request.params.locationId
+    const updateData = request.body
+    const updatedMission = await missionsService.updateMission(locationId, updateData)
+    response.send(updatedMission)
+  } catch (error) {
+    next(error)
+  }
+}
 
 
 
