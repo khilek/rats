@@ -43,16 +43,16 @@ async getLocationsMissions(request, response, next){
 
 
 
-async updateMission(request, response, next){
-  try {
-    const locationId = request.params.locationId
-    const updateData = request.body
-    const updatedMission = await missionsService.updateMission(locationId, updateData)
-    response.send(updatedMission)
-  } catch (error) {
-    next(error)
-  }
-}
+// async updateMission(request, response, next){
+//   try {
+//     const locationId = request.params.locationId
+//     const updateData = request.body
+//     const updatedMission = await missionsService.updateMission(locationId, updateData)
+//     response.send(updatedMission)
+//   } catch (error) {
+//     next(error)
+//   }
+// }
 
 
 
